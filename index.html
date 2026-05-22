@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aniket Mondal - Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .navbar {
+            padding: 10px 20px;
+        }
+        .theme-toggle-container {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-theme {
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+        a {
+            color: #17a2b8;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #0dcaf0;
+        }
+        .section-title {
+            border-bottom: 2px solid #444;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+        body.light-mode .section-title {
+            border-bottom: 2px solid #bbb;
+        }
+        .contact-info i {
+            margin-right: 8px;
+        }
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        .timeline-icon {
+            width: 40px;
+            height: 40px;
+            background: #1e1e1e;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: #fff;
+            flex-shrink: 0;
+            margin-right: 1rem;
+        }
+        body.light-mode .timeline-icon {
+            background: #e8e8e8;
+            border-color: #000;
+            color: #000;
+        }
+        .timeline-content h5 {
+            margin-top: 0;
+            margin-bottom: 0.25rem;
+        }
+        .timeline-date {
+            font-size: 0.85rem;
+            color: #aaa;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        body.light-mode .timeline-date {
+            color: #666;
+        }
+        .timeline-content p {
+            margin: 0;
+        }
+        /* Lists */
+        .list-unstyled li {
+            margin-bottom: 10px;
+        }
+        .project-item {
+            margin-bottom: 20px;
+        }
+        /* Experience */
+        .internship-item h5 {
+            margin-bottom: 2px;
+        }
+        .internship-item ul li {
+            margin-bottom: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-transparent bg-transparent fixed-top">
+        <div class="container-fluid">
+            <div class="ms-auto">
+                <button class="btn btn-dark theme-toggle" id="themeToggleBtn">
+                    <i class="bi bi-moon-fill" id="themeIcon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4" style="padding-top: 60px !important;">
+        <!-- HEADER -->
+        <header class="mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4">ANIKET MONDAL</h1>
+                    <p class="lead">
+                        Software Engineer | Full-Stack, Embedded Systems &amp; AI/ML
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-info text-md-end">
+                        <p><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu</p>
+                        <p><i class="fas fa-phone"></i> +91 9445986057</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:aniket2310082@ssn.edu.in">aniket2310082@ssn.edu.in</a></p>
+                        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/aniket-mondal-091078332/" target="_blank">LinkedIn Profile</a></p>
+                        <p><i class="fab fa-github"></i> <a href="https://github.com/L-10-rush" target="_blank">GitHub Profile</a></p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- PROFESSIONAL SUMMARY -->
+        <section id="summary" class="mb-5">
+            <h2 class="section-title">Professional Summary</h2>
+            <p>An aspiring software engineer with a strong foundation in cybersecurity and backend systems. Adept at leveraging C++, C, Python and Java to develop secure, user-centric solutions. Passionate about applying gamification and efficient algorithms to solve complex problems, while effectively leading teams to achieve project goals.</p>
+        </section>
+
+        <!-- TECHNICAL SKILLS -->
+        <section id="technical-skills" class="mb-5">
+            <h2 class="section-title">Technical Skills</h2>
+            <ul class="list-unstyled">
+                <li><strong>Programming:</strong> C/C++, Python, Java, JavaScript, Bash, Go, Dart</li>
+                <li><strong>Databases:</strong> Oracle SQL, MongoDB, PostgreSQL, Redis</li>
+                <li><strong>Frameworks:</strong> GTK, DaisyUI, Next.js, React.js, Flutter, FastAPI</li>
+                <li><strong>AI / ML:</strong> BERT Embeddings, MLP, Groq LLM, scikit-learn </li>
+                <li><strong>Development Tools:</strong> Neovim, VS Code, Git, GitHub, Postman, Linux, Ghidra, Burp Suite, Docker</li>
+                <li><strong>Coursework:</strong> AI &amp; Machine Learning, Operating Systems, OOPs, Oracle-DBMS, Computer Networks, DSA</li>
+                <li><strong>Core Skills:</strong> Analytical Thinking, Adaptability, Teamwork, Time Management, Communication</li>
+            </ul>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="mb-5">
+            <h2 class="section-title">Projects</h2>
+
+            <div class="project-item">
+                <h5>THINKER-AI — RAG Assistant with Flutter</h5>
+                <span class="timeline-date">Jan 2026 – Apr 2026 &nbsp;|&nbsp; Flutter · FastAPI · Gemini · Tavily API · Sentence Transformers</span>
+                <p>
+                    Built a RAG AI assistant with real-time web search across 10+ sources, leveraging Sentence Transformers for semantic ranking (&gt;85% relevance) and Gemini LLM for cited answer synthesis. Delivered &lt;300ms streamed responses via FastAPI WebSockets with a cross-platform Flutter frontend, maintaining 99.9% uptime across mobile and desktop.
+                </p>
+                <a href="https://github.com/L-10-rush/THINKER-AI_RAG_with_Flutter" target="_blank">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+
+            <div class="project-item">
+                <h5>LinkUp — Real-Time Chat Platform</h5>
+                <span class="timeline-date">June 2025 – Aug 2025 &nbsp;|&nbsp; MERN · Socket.IO · JWT · Bcrypt.js · Cloudinary</span>
+                <p>
+                    Engineered a secure real-time chat platform with JWT authentication, Socket.IO messaging (&lt;200ms latency), Cloudinary media storage (99.9% reliability), and a responsive React + DaisyUI interface.
+                </p>
+                <a href="https://github.com/L-10-rush/LinkUp" target="_blank">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+
+            <div class="project-item">
+                <h5>ChallengeX — Polyglot Microservices Platform</h5>
+                <span class="timeline-date">Feb 2025 – Mar 2025 &nbsp;|&nbsp; Next.js · Go (Gin) · Python · PostgreSQL · Redis · Docker</span>
+                <p>
+                    Developed a polyglot microservices architecture using Go (Gin) for high-concurrency REST APIs and Python for background tasks, utilizing Redis caching to optimize system latency. Built a scalable database with PostgreSQL, implementing optimized relational schemas for real-time leaderboard aggregation and automated user streak tracking.
+                </p>
+                <a href="https://github.com/L-10-rush/challengeX" target="_blank">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+
+            <div class="project-item">
+                <h5>Food Delivery Application</h5>
+                <span class="timeline-date">Jan 2024 – Apr 2024 &nbsp;|&nbsp; C · GTK · curl · cJSON · Bing Maps API</span>
+                <p>
+                    Built a cross-platform app with GTK, delivering a modern UI and integrating advanced pathfinding that reduced order processing latency by 35%. Developed a modular server backend capable of handling 10K+ concurrent requests with 99.9% uptime, ensuring scalable and reliable performance.
+                </p>
+                <a href="https://github.com/L-10-rush/food-delivery-in-c" target="_blank">
+                    <i class="fab fa-github"></i> View Code
+                </a>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE / LEADERSHIP (blank — to be filled) -->
+        <!-- <section id="experience" class="mb-5">
+            <h2 class="section-title">Professional Experience &amp; Leadership</h2>
+            <div class="internship-item mb-4">
+                <h5><strong>— Yet to be filled —</strong></h5>
+                <span class="timeline-date"></span>
+                <ul class="mt-2">
+                    Add experience items here
+                </ul>
+            </div>
+        </section> -->
+
+        <!-- EDUCATION -->
+        <section id="education" class="mb-5">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <h5>Sri Sivasubramaniya Nadar College of Engineering</h5>
+                        <span class="timeline-date">2023 – 2027</span>
+                        <p>Bachelor of Engineering in Computer Science and Engineering &nbsp;|&nbsp; Chennai, Tamil Nadu</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <h5>IIT Madras — B.S. Electronic Systems</h5>
+                        <span class="timeline-date">September 2024 – Present</span>
+                        <p>Indian Institute of Technology Madras &nbsp;|&nbsp; Credits Earned: 25 / 43</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h5>
+                            <a href="https://chennaiashoknagar.kvs.ac.in/en/" target="_blank">
+                                PM Shri Kendriya Vidyalaya Ashok Nagar, Chennai
+                            </a>
+                        </h5>
+                        <span class="timeline-date">2022 – 2023</span>
+                        <p>
+                            &nbsp;|&nbsp;
+                            <strong>Percentage: 92.2 %</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MISC -->
+        <section id="misc" class="mb-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="section-title">Leadership &amp; Achievements</h2>
+                    <ul class="list-unstyled">
+                        <li><strong>2nd Runner-Up</strong> — SRM Hack Summit 2025 (50+ teams), 36-hour build sprint.</li>
+                        <li><strong>Finalist</strong> — SAP HACKFEST State Hub round, national hackathon.</li>
+                        <li><strong>Honourable Mention</strong> — KCG Model United Nations.</li>
+                        <li><strong>Rank 169 / 1,179</strong> — Nite CTF international cybersecurity competition.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="section-title">Certifications</h2>
+                    <ul class="list-unstyled">
+                        <!-- Add certifications here when available -->
+                        <li style="color:#666;">— Yet to be filled —</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h2 class="section-title">Technical Interests</h2>
+                    <ul class="list-unstyled">
+                        <li>Cybersecurity</li>
+                        <li>Networking</li>
+                        <li>System Design</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="section-title">Languages</h2>
+                    <ul class="list-unstyled">
+                        <li>English <span style="color:#aaa;font-size:0.9em;">— Fluent</span></li>
+                        <li>Hindi <span style="color:#aaa;font-size:0.9em;">— Native</span></li>
+                        <li>Bengali <span style="color:#aaa;font-size:0.9em;">— Mother Tongue</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggleBtn = document.getElementById('themeToggleBtn');
+            const themeIcon = document.getElementById('themeIcon');
+            let isDarkMode = true;
+
+            themeToggleBtn.addEventListener('click', function () {
+                if (isDarkMode) {
+                    document.body.classList.add('light-mode');
+                    themeToggleBtn.classList.remove('btn-dark');
+                    themeToggleBtn.classList.add('btn-light');
+                    themeIcon.classList.remove('bi-moon-fill');
+                    themeIcon.classList.add('bi-sun-fill');
+                } else {
+                    document.body.classList.remove('light-mode');
+                    themeToggleBtn.classList.remove('btn-light');
+                    themeToggleBtn.classList.add('btn-dark');
+                    themeIcon.classList.remove('bi-sun-fill');
+                    themeIcon.classList.add('bi-moon-fill');
+                }
+                isDarkMode = !isDarkMode;
+            });
+        });
+    </script>
+</body>
+</html>
