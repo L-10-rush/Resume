@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aniket Mondal - Resume</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -24,6 +24,8 @@
         }
         .navbar {
             padding: 10px 20px;
+            position: relative;
+            z-index: 10;  /* above background */
         }
         .theme-toggle-container {
             display: flex;
@@ -110,10 +112,52 @@
         .internship-item ul li {
             margin-bottom: 6px;
         }
+
+        /* Vanta background container – fixed behind content */
+        #vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Make sure all content sits above the background */
+        .container,
+        .navbar,
+        footer {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Improve readability on dark/light mode */
+        body.light-mode .container {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+        }
+        body:not(.light-mode) .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(2px);
+            border-radius: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- Background container (Vanta will attach here) -->
+    <div id="vanta-bg"></div>
+
     <nav class="navbar navbar-expand-lg navbar-transparent bg-transparent fixed-top">
         <div class="container-fluid">
             <div class="ms-auto">
@@ -215,18 +259,6 @@
             </div>
         </section>
 
-        <!-- EXPERIENCE / LEADERSHIP (blank — to be filled) -->
-        <!-- <section id="experience" class="mb-5">
-            <h2 class="section-title">Professional Experience &amp; Leadership</h2>
-            <div class="internship-item mb-4">
-                <h5><strong>— Yet to be filled —</strong></h5>
-                <span class="timeline-date"></span>
-                <ul class="mt-2">
-                    Add experience items here
-                </ul>
-            </div>
-        </section> -->
-
         <!-- EDUCATION -->
         <section id="education" class="mb-5">
             <h2 class="section-title">Education</h2>
@@ -287,13 +319,6 @@
                         <li><strong>Rank 169 / 1,179</strong> — Nite CTF international cybersecurity competition.</li>
                     </ul>
                 </div>
-                <!-- <div class="col-md-6">
-                    <h2 class="section-title">Certifications</h2>
-                    <ul class="list-unstyled">
-                        Add certifications here when available
-                        <li style="color:#666;">— Yet to be filled —</li>
-                    </ul>
-                </div> -->
             </div>
 
             <div class="row mt-4">
@@ -319,6 +344,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Theme toggle (light/dark) -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const themeToggleBtn = document.getElementById('themeToggleBtn');
@@ -343,5 +369,61 @@
             });
         });
     </script>
+
+    <!-- Three.js and Vanta libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+    <!-- Vanta background initialisation (full-screen, working) -->
+    <script>
+        (function() {
+            // The background div already exists in HTML (<div id="vanta-bg">)
+            let vantaEffect = null;
+
+            function initVanta() {
+                if (window.VANTA && !vantaEffect) {
+                    vantaEffect = window.VANTA.NET({
+                        el: "#vanta-bg",
+                        mouseControls: true,
+                        touchControls: true,
+                        gyroControls: false,
+                        minHeight: 200.00,
+                        minWidth: 200.00,
+                        scale: 1.00,
+                        scaleMobile: 1.00,
+                        color: 0x691e1e,          // deep red – matches dark theme
+                        backgroundColor: 0x030307,  // near black
+                        points: 12.00,
+                        maxDistance: 22.00,
+                        spacing: 17.00
+                    });
+                }
+            }
+
+            // Start when libraries are ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initVanta);
+            } else {
+                initVanta();
+            }
+
+            // Optional: Update Vanta colors when light/dark mode toggles
+            const themeBtn = document.getElementById('themeToggleBtn');
+            if (themeBtn) {
+                themeBtn.addEventListener('click', function() {
+                    setTimeout(() => {
+                        if (vantaEffect) {
+                            const isLight = document.body.classList.contains('light-mode');
+                            vantaEffect.setOptions({
+                                color: isLight ? 0x884c4c : 0x691e1e,        // lighter red for light mode
+                                backgroundColor: isLight ? 0xe0e0e0 : 0x030307
+                            });
+                        }
+                    }, 50);
+                });
+            }
+        })();
+    </script>
 </body>
+
 </html>

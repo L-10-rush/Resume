@@ -6,3 +6,20 @@
 .timeline-content h5 a:hover {
     color: #007bff;
 }
+
+/* Vanta background container – behind content */
+#vanta-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+/* Optional: make content readable over the net */
+body, .container, .navbar {
+    position: relative;
+    z-index: 1;
+}
